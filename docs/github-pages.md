@@ -4,21 +4,25 @@ Repositorio: `https://github.com/khrizenriquez/poc_website.git`. El directorio l
 
 ## Entorno verificado
 
-| Herramienta                            | Versión instalada                                     |
-| -------------------------------------- | ----------------------------------------------------- |
-| Node.js                                | 22.0.0 local; CI selecciona Node 22 mediante `.nvmrc` |
-| pnpm                                   | 10.5.2                                                |
-| React / React DOM                      | 19.2.9                                                |
-| Vite                                   | 6.4.5                                                 |
-| Tailwind CSS                           | 4.3.3                                                 |
-| GSAP / @gsap/react                     | 3.15.0 / 2.1.2                                        |
-| React Router                           | 7.18.5                                                |
-| i18next / react-i18next                | 25.10.10 / 16.6.6                                     |
-| Three / React Three Fiber              | 0.180.0 / 9.8.2                                       |
-| Vitest / coverage-v8                   | 3.2.7                                                 |
-| Fontsource Variable (DM Sans / Outfit) | 5.3.0                                                 |
+| Herramienta                            | Versión instalada            |
+| -------------------------------------- | ---------------------------- |
+| Node.js                                | 26.13.0 exacta en local y CI |
+| pnpm                                   | 12.16.1                      |
+| React / React DOM                      | 19.3.1                       |
+| Vite                                   | 8.3.5                        |
+| Tailwind CSS                           | 4.3.4                        |
+| GSAP / @gsap/react                     | 3.15.0 / 2.1.2               |
+| React Router                           | 7.18.5                       |
+| i18next / react-i18next                | 25.10.10 / 16.6.6            |
+| Three / React Three Fiber              | 0.180.0 / 9.8.2              |
+| Vitest / coverage-v8                   | 5.1.0                        |
+| Fontsource Variable (DM Sans / Outfit) | 5.3.0                        |
 
-`pnpm install --frozen-lockfile` reproduce las dependencias. No se actualizaron React, Vite ni el resto de bibliotecas durante esta preparación; se sustituyeron los dos paquetes de fuentes por sus variantes variables.
+`pnpm install --frozen-lockfile` reproduce las dependencias. `@vitejs/plugin-react` se actualizó a 6.2.1 para Vite 8. `.npmrc` exige los engines declarados. `pnpm-workspace.yaml` conserva las excepciones de antigüedad que pnpm 12 generó para las versiones exactas solicitadas; no desactiva globalmente esa política.
+
+Vitest 5 reinicia la base de su servidor: `test.env.BASE_URL` comparte la constante de la base de Vite para que las pruebas DOM sigan validando `/poc_website/`. Se mantienen los umbrales de 95% y todo `src` dentro de cobertura. Se añadieron pruebas para recursos con base raíz, subruta de Pages y otra subruta.
+
+Referencias de migración: [Vite 8](https://vite.dev/guide/migration.html), [Vitest 5](https://vitest.dev/guide/migration/) y [cambio de BASE_URL en Vitest](https://github.com/vitest-dev/vitest/issues/9156).
 
 ## Archivos listos
 

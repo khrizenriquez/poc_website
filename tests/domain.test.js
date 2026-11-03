@@ -87,6 +87,18 @@ describe('routing, locale and persistence', () => {
     expect(instance.t('fallbackOnly')).toBe('Respaldo');
     expect(createI18n().language).toBe('es');
   });
+  it.each(['/', '/poc_website/', '/another-demo/'])(
+    'builds local asset URLs under %s without dropping or duplicating the prefix',
+    (base) => {
+      vi.stubEnv('BASE_URL', base);
+      try {
+        expect(asset('people-team.jpg')).toBe(`${base}media/people-team.jpg`);
+        expect(asset('flags/gt.svg')).toBe(`${base}media/flags/gt.svg`);
+      } finally {
+        vi.unstubAllEnvs();
+      }
+    },
+  );
 });
 
 describe('catalog filtering', () => {

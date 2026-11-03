@@ -2,7 +2,7 @@
 
 Fecha inicial: 2026-10-31. Verificación final: 2026-11-02. Demo local; no se publicó en GitHub Pages.
 
-Resultado final: **496 pruebas aprobadas y 100% en las cuatro métricas de cobertura**. Ver [informe final](verification.md).
+Resultado final: **499 pruebas aprobadas y 100% en las cuatro métricas de cobertura**. Ver [informe final](verification.md).
 
 ## Contrato de cobertura
 
@@ -59,3 +59,5 @@ La cobertura no demuestra todos los escenarios posibles ni equivalencia entre na
 La auditoría HTTP comprueba entrega de archivos y la entrada para las URLs con hash; el renderizado de cada ruta se verifica por separado en las 328 pruebas DOM de rutas. No se hizo un recorrido de las 164 rutas en navegadores reales, una auditoría completa de accesibilidad ni una prueba de publicación remota. Las capturas visuales complementan la suite.
 
 Parallax: pruebas en `motion.test.jsx` para fotos grandes, exclusión de miniaturas/textos, marco sin imagen, movimiento reducido, API ausente y cambios de ruta/preferencia. Las pruebas de rutas verifican la marca PoC y el footer solicitado en ES/EN y claro/oscuro.
+
+Actualización de herramientas: pruebas parametrizadas de recursos en `/`, `/poc_website/` y `/another-demo/`, incluidas fotos y SVG anidados. La aserción independiente de la base de GitHub Pages se conserva.

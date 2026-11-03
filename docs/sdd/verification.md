@@ -2,14 +2,16 @@
 
 Fecha: 2026-11-02.
 
-`pnpm check` completó correctamente: 496 pruebas, cobertura, compilación y auditoría HTTP del artefacto.
+`pnpm check` completó correctamente: 499 pruebas, cobertura, compilación y auditoría HTTP del artefacto.
 
 | Métrica V8    | Cubierto | Total | Cobertura |
 | ------------- | -------: | ----: | --------: |
-| Instrucciones |     2020 |  2020 |      100% |
-| Ramas         |      356 |   356 |      100% |
-| Funciones     |       71 |    71 |      100% |
-| Líneas        |     2020 |  2020 |      100% |
+| Instrucciones |      369 |   369 |      100% |
+| Ramas         |      253 |   253 |      100% |
+| Funciones     |      124 |   124 |      100% |
+| Líneas        |      330 |   330 |      100% |
+
+Entorno actualizado: Node 26.13.0, pnpm 12.16.1, React 19.3.1, Vite 8.3.5, Tailwind CSS 4.3.4 y Vitest/coverage-v8 5.1.0. La nueva remapificación AST de V8 cambia los totales frente a Vitest 3; no se excluyeron archivos ni se redujeron umbrales.
 
 Umbral exigido por configuración: 95% en cada métrica. Ámbito: todos los archivos JS/JSX de `src`.
 
@@ -23,7 +25,7 @@ Modo claro/oscuro/sistema verificado adicionalmente con 328 combinaciones de rut
 
 ![Portada con modo oscuro](../preview/theme-dark-desktop.jpg)
 
-Banderas: seis SVG locales verificados en el selector y desplegable, cajas de 15 × 15 px, carga correcta bajo `/poc_website/`. Cambio GT → CR y tema claro comprobados a 320 px sin desbordamiento. Suite: 496 tests; cobertura JS/JSX 100% en las cuatro métricas.
+Banderas: seis SVG locales verificados en el selector y desplegable, cajas de 15 × 15 px, carga correcta bajo `/poc_website/`. Cambio GT → CR y tema claro comprobados a 320 px sin desbordamiento. Suite: 499 tests; cobertura JS/JSX 100% en las cuatro métricas.
 
 ## Marca PoC y parallax
 
@@ -35,4 +37,12 @@ Verificación real: transformación de la foto de país cambió con el scroll ta
 
 ![Footer PoC](../preview/poc-footer.jpg)
 
-Preparación de publicación: instalación con lockfile verificada, 496 tests y `pnpm check` exitosos. Build con dos WOFF2 variables (69,224 bytes), un CSS y 24 archivos servidos sin faltantes. Ver [despliegue y versiones](../github-pages.md).
+Preparación de publicación: instalación con lockfile verificada, 499 tests y `pnpm check` exitosos. Build con dos WOFF2 variables (69,224 bytes), un CSS y 24 archivos servidos sin faltantes. Ver [despliegue y versiones](../github-pages.md).
+
+## Revisión después de actualizar dependencias
+
+Instalación con `--frozen-lockfile` y `pnpm check` completadas con las versiones nuevas. En el preview de producción se recargó el pedido profundo con P01 en inglés, se provocó el envío vacío y se cambió a oscuro y español: referencia y errores conservados y traducidos.
+
+La portada renderizó la escena WebGL real con el nuevo build, sin errores ni advertencias en la consola de la revisión.
+
+![Portada con React 19.3.1 y Vite 8.3.5](../preview/upgrade-vite8.jpg)

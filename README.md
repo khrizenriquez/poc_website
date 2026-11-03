@@ -4,9 +4,12 @@ Demo local con React 19, pnpm, Vite y Tailwind CSS. Inspiración visual: Lusion,
 
 ## Ejecutar
 
-Desarrollo verificado con Node.js 22.0.0 y pnpm 10.5.2. `.nvmrc` selecciona la rama 22 de Node; CI usa esa misma rama. Las versiones de dependencias se fijan mediante `pnpm-lock.yaml`.
+Desarrollo verificado con Node.js 26.13.0 y pnpm 12.16.1. `.nvmrc`, `engines` y CI fijan esas versiones exactas. React 19.3.1, Vite 8.3.5, Tailwind CSS 4.3.4 y Vitest 5.1.0 quedan fijados en `package.json` y `pnpm-lock.yaml`.
 
 ```sh
+nvm install
+nvm use
+npm install --global pnpm@12.16.1
 pnpm install --frozen-lockfile
 pnpm dev
 ```
@@ -33,7 +36,7 @@ El reporte HTML se genera en `coverage/index.html`. El resumen legible por herra
 
 La cobertura incluye **todos los archivos JS/JSX de `src`**, incluidos el arranque, componentes, escena 3D, navegación y formularios. No hay exclusiones de código ni comentarios para ignorar ramas. CSS, librerías externas y archivos de configuración de herramientas no forman parte de esa métrica.
 
-Última verificación: **496 pruebas aprobadas, 100% en las cuatro métricas de cobertura**. Ver [informe final](docs/sdd/verification.md) y [matriz de escenarios y límites](docs/sdd/test-matrix.md).
+Última verificación: **499 pruebas aprobadas, 100% en las cuatro métricas de cobertura**. Ver [informe final](docs/sdd/verification.md) y [matriz de escenarios y límites](docs/sdd/test-matrix.md).
 
 ## Marca y movimiento
 

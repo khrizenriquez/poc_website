@@ -2,12 +2,16 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
+const base = '/poc_website/';
+
 export default defineConfig({
-  base: '/poc_website/',
+  base,
   plugins: [react(), tailwindcss()],
   build: { chunkSizeWarningLimit: 1000 },
   test: {
     environment: 'jsdom',
+    // Vitest resets Vite's server base; DOM tests must use the deployed asset prefix.
+    env: { BASE_URL: base },
     setupFiles: ['./tests/setup.js'],
     restoreMocks: true,
     coverage: {
