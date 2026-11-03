@@ -2,7 +2,7 @@
 :root {
   color-scheme: light;
   --ink: #17333d;
-  --navy: #102e3a;
+  --navy: #0055A3;
   --mint: #c1e6d6;
   --muted: #566c71;
   --line: #dbe2df;
@@ -13,7 +13,7 @@
   --hero-glow: #e9eeeb;
   --accent-text: #507a78;
   --focus: #3b8279;
-  --button-bg: #102e3a;
+  --button-bg: #0055A3;
   --button-text: #ffffff;
   --button-hover: #28515d;
   --closing: #dcebe1;
@@ -37,7 +37,7 @@
   --accent-text: #9bc9ba;
   --focus: #a5d8c5;
   --button-bg: #c1e6d6;
-  --button-text: #102e3a;
+  --button-text: #0055A3;
   --button-hover: #e0f3e9;
   --closing: #223e43;
   --error: #ffb6a4;

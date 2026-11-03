@@ -196,7 +196,7 @@ p {
   top: 45px;
   width: 240px;
   background: var(--paper);
-  box-shadow: 0 15px 40px #102e3a26;
+  box-shadow: 0 15px 40px #0055A326;
   border: 1px solid var(--line);
   padding: 10px;
   z-index: 40;
@@ -248,7 +248,7 @@ p {
 }
 .local-strip-end {
   margin-left: auto;
-  color: #b3c8c8;
+  color: #c3d2d0;
 }
 .hero {
   min-height: 690px;
@@ -530,7 +530,7 @@ p {
   top: 18px;
   color: white;
   backdrop-filter: blur(5px);
-  background: #102e3a66;
+  background: #0055A366;
   border: 1px solid #ffffff70;
   border-radius: 50%;
   width: 32px;
@@ -561,7 +561,7 @@ p {
   position: relative;
 }
 .regional-section .section-heading p {
-  color: #b2c3c5;
+  color: #c3d2d0;
 }
 .regional-section .eyebrow {
   color: var(--mint);
@@ -576,10 +576,11 @@ p {
   min-width: 0;
 }
 .region-map {
+  --focus: var(--mint);
   width: 100%;
   position: relative;
   aspect-ratio: 1.45;
-  background: #102e3a;
+  background: var(--navy);
   color: #e4f1eb;
   border-radius: 3px;
 }
@@ -618,7 +619,7 @@ p {
 }
 .map-point b {
   font-weight: 400;
-  background: #102e3ac0;
+  background: #0055A3c0;
   padding: 4px;
 }
 .map-point:hover {
@@ -714,7 +715,8 @@ p {
   margin: 28px auto 35px;
 }
 .site-footer {
-  background: #0e2731;
+  --focus: var(--mint);
+  background: var(--navy);
   color: #e0eae5;
   padding: 65px 6vw 25px;
 }
@@ -733,7 +735,7 @@ p {
 }
 .footer-top .circle-link {
   margin-left: auto;
-  border: 1px solid #8da3a3;
+  border: 1px solid #c3d2d0;
   border-radius: 50%;
   width: 58px;
   height: 58px;
@@ -753,7 +755,7 @@ p {
   gap: 13px;
 }
 .footer-links .eyebrow {
-  color: #97aeae;
+  color: #c3d2d0;
   font-size: 9px;
   margin-bottom: 8px;
 }
@@ -775,7 +777,7 @@ p {
 .footer-statement > span:last-child {
   font-size: 10px;
   letter-spacing: 2px;
-  color: #97aeae;
+  color: #c3d2d0;
   margin-top: 15px;
 }
 .footer-bottom {
@@ -783,7 +785,7 @@ p {
   padding-top: 24px;
   display: flex;
   justify-content: space-between;
-  color: #97aeae;
+  color: #c3d2d0;
   font-size: 10px;
 }
 .footer-bottom > div {
@@ -813,7 +815,7 @@ p {
   font-family: 'Outfit';
   font-size: 90px;
   line-height: 0.8;
-  text-shadow: 0 2px 20px #102e3a80;
+  text-shadow: 0 2px 20px #0055A380;
 }
 .photo-country small {
   display: block;
@@ -1754,7 +1756,7 @@ select option {
 }
 .regional-section .row-index,
 .regional-section .country-row small {
-  color: #adc1bd;
+  color: #c3d2d0;
 }
 @media (max-width: 380px) {
   .site-header {
