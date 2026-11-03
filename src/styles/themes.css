@@ -1,0 +1,49 @@
+/* Semantic colors keep photography and product packaging independent of UI appearance. */
+:root {
+  color-scheme: light;
+  --ink: #17333d;
+  --navy: #102e3a;
+  --mint: #c1e6d6;
+  --muted: #566c71;
+  --line: #dbe2df;
+  --paper: #f8f9f6;
+  --surface: #eaf0ea;
+  --field: #fcfdfa;
+  --control-border: #7a8e86;
+  --hero-glow: #e9eeeb;
+  --accent-text: #507a78;
+  --focus: #3b8279;
+  --button-bg: #102e3a;
+  --button-text: #ffffff;
+  --button-hover: #28515d;
+  --closing: #dcebe1;
+  --error: #a3392c;
+  --error-surface: #f5e6df;
+  --error-text: #903e2a;
+  --product-0: #e3ebe6;
+  --product-1: #e2e9eb;
+  --product-2: #eae7dd;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #e6eeea;
+  --muted: #adc1bd;
+  --line: #354c53;
+  --paper: #101e25;
+  --surface: #1c343b;
+  --field: #162a32;
+  --control-border: #6d8988;
+  --hero-glow: #203c43;
+  --accent-text: #9bc9ba;
+  --focus: #a5d8c5;
+  --button-bg: #c1e6d6;
+  --button-text: #102e3a;
+  --button-hover: #e0f3e9;
+  --closing: #223e43;
+  --error: #ffb6a4;
+  --error-surface: #452b2a;
+  --error-text: #ffd2c6;
+  --product-0: #243f42;
+  --product-1: #233842;
+  --product-2: #3b3e36;
+}
