@@ -21,7 +21,7 @@ export default function Editorial({ page, country, language }) {
       <PageHeading
         title={t(`pages.${page}`)}
         description={t('editorial.intro')}
-        eyebrow={country ? country.name : t('regional')}
+        eyebrow={country ? t(`countries.${country.code}.name`) : t('regional')}
       />
       {page === 'servicios' ? (
         <div className="service-details">
@@ -56,7 +56,9 @@ export default function Editorial({ page, country, language }) {
             <h2>{t('hero.orbit')}</h2>
             <p>{t(`editorial.${key}`)}</p>
             {country && (
-              <p className="demo-note">{t('editorial.countryBody', { country: country.name })}</p>
+              <p className="demo-note">
+                {t('editorial.countryBody', { country: t(`countries.${country.code}.name`) })}
+              </p>
             )}
             <Link className="text-link" to={routePath(language, country, 'contacto')}>
               {t('nav.contact')}

@@ -29,15 +29,30 @@ it('navigates corporate → country → catalog → another country and back', a
 });
 
 it('switches languages preserving country, page and query, and saves only the preference', async () => {
-  renderPage('/es/guatemala/novedades/?story=quality');
+  renderPage('/es/panama/novedades/?story=quality');
+  expect(screen.getByText('5 de octubre de 2026')).toBeInTheDocument();
+  expect(document.title).toContain('PoC Panamá');
   fireEvent.change(screen.getByRole('combobox', { name: 'Idioma' }), { target: { value: 'en' } });
   expect(
     await screen.findByRole('heading', { level: 1, name: 'Care is in the details' }),
   ).toBeInTheDocument();
   expect(document.documentElement.lang).toBe('en');
-  expect(screen.getByLabelText('PoC · Guatemala')).toBeInTheDocument();
+  expect(screen.getByLabelText('PoC · Panama')).toBeInTheDocument();
+  expect(document.title).toContain('PoC Panama');
+  expect(screen.getByText('October 5, 2026')).toBeInTheDocument();
   expect(localStorage.getItem(languageConfig.storageKey)).toBe('en');
   expect(localStorage.length).toBe(1);
+
+  fireEvent.change(screen.getByRole('combobox', { name: 'Language' }), {
+    target: { value: 'es' },
+  });
+  expect(
+    await screen.findByRole('heading', { level: 1, name: 'El cuidado está en los detalles' }),
+  ).toBeInTheDocument();
+  expect(document.documentElement.lang).toBe('es');
+  expect(screen.getByLabelText('PoC · Panamá')).toBeInTheDocument();
+  expect(screen.getByText('5 de octubre de 2026')).toBeInTheDocument();
+  expect(localStorage.getItem(languageConfig.storageKey)).toBe('es');
 });
 it('survives disabled localStorage while changing language', async () => {
   vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {

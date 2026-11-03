@@ -23,7 +23,9 @@ describe.each(['light', 'dark'])('Theme %s', (theme) => {
         expect(screen.queryByText('404')).not.toBeInTheDocument();
         expect(screen.getByLabelText(instance.t('nav.language'))).toHaveValue(language);
         if (route.country)
-          expect(screen.getByLabelText(`PoC · ${route.country.name}`)).toBeInTheDocument();
+          expect(
+            screen.getByLabelText(`PoC · ${instance.t(`countries.${route.country.code}.name`)}`),
+          ).toBeInTheDocument();
       },
     );
   });

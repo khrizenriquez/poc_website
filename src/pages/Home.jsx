@@ -19,11 +19,11 @@ export default function Home({ language, country }) {
           <h1>
             {t(country ? 'hero.localTitle' : 'hero.line1')}
             <br />
-            <span>{country ? country.name : t('hero.line2')}</span>
+            <span>{country ? t(`countries.${country.code}.name`) : t('hero.line2')}</span>
           </h1>
           <p>
             {country
-              ? t('hero.localDescription', { country: country.name })
+              ? t('hero.localDescription', { country: t(`countries.${country.code}.name`) })
               : t('hero.description')}
           </p>
           <Link
@@ -47,7 +47,7 @@ export default function Home({ language, country }) {
             />
             <span className="photo-country">
               {country.code}
-              <small>{country.name}</small>
+              <small>{t(`countries.${country.code}.name`)}</small>
             </span>
           </div>
         ) : (

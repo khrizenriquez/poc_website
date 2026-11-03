@@ -1,10 +1,10 @@
 export const countries = [
-  { slug: 'guatemala', code: 'GT', name: 'Guatemala', city: 'Guatemala', x: 18, y: 24 },
-  { slug: 'el-salvador', code: 'SV', name: 'El Salvador', city: 'San Salvador', x: 32, y: 42 },
-  { slug: 'honduras', code: 'HN', name: 'Honduras', city: 'Tegucigalpa', x: 43, y: 28 },
-  { slug: 'nicaragua', code: 'NI', name: 'Nicaragua', city: 'Managua', x: 54, y: 48 },
-  { slug: 'costa-rica', code: 'CR', name: 'Costa Rica', city: 'San José', x: 66, y: 67 },
-  { slug: 'panama', code: 'PA', name: 'Panamá', city: 'Panamá', x: 85, y: 77 },
+  { slug: 'guatemala', code: 'GT', x: 18, y: 24 },
+  { slug: 'el-salvador', code: 'SV', x: 32, y: 42 },
+  { slug: 'honduras', code: 'HN', x: 43, y: 28 },
+  { slug: 'nicaragua', code: 'NI', x: 54, y: 48 },
+  { slug: 'costa-rica', code: 'CR', x: 66, y: 67 },
+  { slug: 'panama', code: 'PA', x: 85, y: 77 },
 ];
 export const corporatePages = [
   '',

@@ -5,7 +5,11 @@ import { asset } from '../lib/navigation';
 import { PageHeading } from './Editorial';
 import { Arrow } from '../components/Icons';
 export default function News() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const dateFormat = new Intl.DateTimeFormat(i18n.language, {
+    dateStyle: 'long',
+    timeZone: 'UTC',
+  });
   const [params, setParams] = useSearchParams();
   const selected = articles.find((article) => article.id === params.get('story'));
   return (
@@ -26,7 +30,8 @@ export default function News() {
           </div>
           <div className="story-body">
             <span className="eyebrow">
-              {t('news.demo')} / {selected.date}
+              {t('news.demo')} /{' '}
+              <time dateTime={selected.date}>{dateFormat.format(new Date(selected.date))}</time>
             </span>
             <p>{t(`news.${selected.id}.body`)}</p>
           </div>
@@ -43,7 +48,8 @@ export default function News() {
               <article className="news-card" key={article.id}>
                 <img src={asset(article.image)} alt={t('editorial.galleryCaption')} />
                 <span className="eyebrow">
-                  {t(`news.${article.id}.category`)} · {article.date}
+                  {t(`news.${article.id}.category`)} ·{' '}
+                  <time dateTime={article.date}>{dateFormat.format(new Date(article.date))}</time>
                 </span>
                 <h2>{t(`news.${article.id}.title`)}</h2>
                 <p>{t(`news.${article.id}.excerpt`)}</p>

@@ -26,7 +26,7 @@ it('supports real hash routes, language links and reload-style remounts', async 
   expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
     'A portfolio of possibilities',
   );
-  expect(screen.getByLabelText('PoC · Panamá')).toHaveAttribute('href', '#/en/panama/');
+  expect(screen.getByLabelText('PoC · Panama')).toHaveAttribute('href', '#/en/panama/');
 });
 it('boots the actual entry point with StrictMode', async () => {
   window.location.hash = '#/es/';

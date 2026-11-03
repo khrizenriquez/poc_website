@@ -60,7 +60,10 @@ function PageRouter() {
   useLayoutEffect(() => {
     instance.changeLanguage(route.language);
     document.documentElement.lang = route.language;
-    document.title = `${instance.t(`pages.${route.page || 'home'}`)} · PoC${route.country ? ` ${route.country.name}` : ''}`;
+    const countryName = route.country
+      ? ` ${instance.t(`countries.${route.country.code}.name`)}`
+      : '';
+    document.title = `${instance.t(`pages.${route.page || 'home'}`)} · PoC${countryName}`;
   }, [route.language, route.page, route.country, instance]);
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });

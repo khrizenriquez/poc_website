@@ -3,6 +3,14 @@ export default {
   brand: 'PoC',
   regional: 'Centroamérica',
   regionLabel: 'Una región. Un mismo propósito.',
+  countries: {
+    GT: { name: 'Guatemala', city: 'Ciudad de Guatemala' },
+    SV: { name: 'El Salvador', city: 'San Salvador' },
+    HN: { name: 'Honduras', city: 'Tegucigalpa' },
+    NI: { name: 'Nicaragua', city: 'Managua' },
+    CR: { name: 'Costa Rica', city: 'San José' },
+    PA: { name: 'Panamá', city: 'Ciudad de Panamá' },
+  },
   nav: {
     home: 'Inicio',
     about: 'Nosotros',
@@ -30,7 +38,7 @@ export default {
     servicios: 'El valor de cada conexión',
     infraestructura: 'Espacios que conectan',
     'presencia-regional': 'Seis países. Una red.',
-    aliados: 'Crecer, juntos',
+    aliados: 'Crecer juntos',
     novedades: 'Lo que nos mueve',
     contacto: 'Iniciemos una conversación',
     consultas: 'Estamos para orientarte',
@@ -56,15 +64,16 @@ export default {
     orbit: 'La salud nos conecta',
     coordinates: 'CENTROAMÉRICA / 6 CONEXIONES',
     localEyebrow: 'UNA CONEXIÓN MÁS CERCANA',
-    localTitle: 'Juntos, en',
+    localTitle: 'Juntos en',
     localDescription:
       'Explora los servicios, las personas y las posibilidades de nuestra red en {{country}}.',
     localCta: 'Explorar servicios',
-    localNote: 'Imágenes de referencia de la red regional. Contenido nacional ilustrativo.',
+    localNote:
+      'Imágenes de referencia de la red regional. El contenido de cada país es de muestra.',
   },
   home: {
     introLabel: '01 / NUESTRO PROPÓSITO',
-    introTitle: 'Detrás de cada entrega, hay una vida.',
+    introTitle: 'Detrás de cada entrega hay una vida.',
     introText:
       'Creemos en el poder de conectar. Unimos a quienes desarrollan soluciones con quienes las necesitan, cuidando cada paso del camino.',
     introLink: 'Así somos',
@@ -72,11 +81,11 @@ export default {
     servicesTitle: 'Cada conexión cuenta.',
     servicesText: 'Una mirada a las capacidades que hacen posible una red regional.',
     regionalLabel: '03 / DONDE ESTAMOS',
-    regionalTitle: 'Cerca, en cada país.',
+    regionalTitle: 'Cerca de ti en cada país.',
     regionalText: 'Seis formas de estar presentes. Un mismo compromiso con las personas.',
     newsLabel: '04 / ACTUALIDAD',
     newsTitle: 'Historias que nos acercan.',
-    quote: 'El futuro de la salud se construye en conexión.',
+    quote: 'Construimos juntos el futuro de la salud.',
     quoteLink: 'Construyámoslo juntos',
   },
   services: {
@@ -84,13 +93,13 @@ export default {
       title: 'Distribución',
       text: 'Conectamos los puntos de una cadena que acerca soluciones a las personas.',
       detail:
-        'Planificación de rutas, coordinación de entregas y seguimiento de cada etapa. Una experiencia de distribución pensada desde las necesidades de nuestros aliados.',
+        'Planificación de rutas, coordinación de entregas y seguimiento de cada etapa. Organizamos la distribución según las necesidades de nuestros aliados.',
     },
     storage: {
       title: 'Almacenamiento',
       text: 'Cada espacio tiene un propósito. Cada proceso, una razón.',
       detail:
-        'Recepción, organización y preparación de productos en espacios diseñados para acompañar la operación. Esta demo ilustra el recorrido de un producto dentro de la red.',
+        'Recibimos, organizamos y preparamos productos en instalaciones diseñadas para esas tareas. Esta demo ilustra el recorrido de un producto dentro de la red.',
     },
     commercial: {
       title: 'Gestión comercial',
@@ -106,10 +115,10 @@ export default {
     visit: 'Visitar PoC {{country}}',
     map: 'Mapa esquemático de conexiones en Centroamérica',
     cities: 'Punto de referencia',
-    count: '06 países conectados',
+    count: '6 países conectados',
     selected: 'Destino seleccionado',
     overview: 'Explorar todos los países',
-    hint: 'Selecciona un punto o una tarjeta para entrar al sitio nacional.',
+    hint: 'Selecciona un punto del mapa o un país de la lista para visitar su sitio.',
   },
   editorial: {
     intro: 'Personas, procesos y conexiones que dan sentido a lo que hacemos.',
@@ -130,12 +139,12 @@ export default {
     partnerNames: ['Aliado de investigación', 'Aliado de bienestar', 'Aliado de innovación'],
     explore: 'Explora nuestras capacidades',
     countryBody:
-      'Esta página presenta una adaptación demostrativa para {{country}}. Los contenidos y canales definitivos se validarían con el equipo local.',
+      'Esta página muestra cómo podría verse el sitio de {{country}}. El equipo local revisaría el contenido y los canales de atención antes de publicarlos.',
   },
   products: {
     eyebrow: 'PORTAFOLIO DEMOSTRATIVO',
     description:
-      'Explora un catálogo de ejemplo. Estos productos son ficticios y no están disponibles para compra.',
+      'Explora un catálogo de ejemplo. Los productos son ficticios y no están a la venta.',
     search: 'Buscar por nombre o código',
     category: 'Categoría',
     all: 'Todas las categorías',
@@ -168,20 +177,20 @@ export default {
   news: {
     intro:
       'Ideas, personas y conexiones. Contenido editorial de muestra para explorar la experiencia.',
-    demo: 'Historia de demostración',
+    demo: 'Historia de muestra',
     read: 'Leer historia',
     back: 'Volver a las historias',
     network: {
       title: 'Una región conectada por nuevas posibilidades',
       category: 'Nuestra red',
       excerpt: 'Una mirada al valor de conectar equipos, espacios y experiencias.',
-      body: 'La cercanía se construye todos los días: escuchando, compartiendo conocimiento y coordinando cada paso. Esta historia ilustra el espacio editorial que podría reunir las novedades de las operaciones nacionales. Su contenido es demostrativo y no anuncia una iniciativa real.',
+      body: 'La cercanía se construye todos los días: escuchando, compartiendo conocimiento y coordinando cada paso. Esta historia de muestra presenta cómo podríamos compartir las novedades de cada país.',
     },
     people: {
       title: 'Las personas detrás de cada conexión',
       category: 'Nuestro equipo',
       excerpt: 'El compromiso empieza con quienes hacen posible cada entrega.',
-      body: 'Cada proceso reúne distintas miradas y habilidades. En este espacio compartimos una historia ilustrativa sobre el trabajo colaborativo, la atención al detalle y la experiencia de los equipos. Los nombres y testimonios reales se incorporarían después de su validación.',
+      body: 'Cada proceso reúne distintas miradas y habilidades. Esta historia de muestra destaca la colaboración, la atención al detalle y la experiencia de los equipos. Cualquier nombre o testimonio real se verificaría antes de publicarlo.',
     },
     quality: {
       title: 'El cuidado está en los detalles',
@@ -203,12 +212,12 @@ export default {
     submit: 'Simular envío',
     success: 'Simulación completada',
     successBody:
-      'La validación fue correcta. No enviamos ni guardamos ningún dato, pedido o reporte.',
+      'El formulario pasó la validación. No se envió ni se guardó ningún dato, pedido o reporte.',
     again: 'Crear otra simulación',
     summary: 'Revisa los campos indicados.',
     optional: 'Selecciona una referencia',
     urgent: 'Este canal de demostración no recibe reportes de seguridad ni solicitudes reales.',
-    careers: 'Comparte una presentación ficticia de tu perfil para explorar el formulario.',
+    careers: 'Usa un perfil ficticio para probar el formulario de empleo.',
     errors: {
       name: 'Escribe entre 2 y 80 caracteres.',
       email: 'Escribe un correo válido de hasta 160 caracteres.',

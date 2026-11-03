@@ -70,10 +70,12 @@ export default function Layout({ route, children }) {
         <Link
           to={routePath(language, country)}
           className="brand"
-          aria-label={`PoC · ${country ? country.name : t('regional')}`}
+          aria-label={`PoC · ${country ? t(`countries.${country.code}.name`) : t('regional')}`}
         >
           <Logo />
-          <span className="brand-location">{country ? country.name : t('regional')}</span>
+          <span className="brand-location">
+            {country ? t(`countries.${country.code}.name`) : t('regional')}
+          </span>
         </Link>
         <button
           ref={menuButton}
@@ -134,7 +136,7 @@ export default function Layout({ route, children }) {
                 <Link to={routePath(language)}>{t('nav.corporate')}</Link>
                 {countries.map((item) => (
                   <Link key={item.code} to={routePath(language, item)}>
-                    {item.name}
+                    {t(`countries.${item.code}.name`)}
                     <span className="country-code">
                       <CountryFlag code={item.code} />
                       {item.code}
@@ -163,7 +165,7 @@ export default function Layout({ route, children }) {
         <div className="local-strip">
           <Link to={routePath(language)}>{t('nav.corporate')}</Link>
           <span>/</span>
-          <span>{country.name}</span>
+          <span>{t(`countries.${country.code}.name`)}</span>
           <span className="local-strip-end">{t('regionLabel')}</span>
         </div>
       )}
@@ -187,12 +189,14 @@ export default function Layout({ route, children }) {
             <span className="eyebrow">{t('nav.countries')}</span>
             {countries.map((item) => (
               <Link key={item.code} to={routePath(language, item)}>
-                {item.name}
+                {t(`countries.${item.code}.name`)}
               </Link>
             ))}
           </div>
           <div>
-            <span className="eyebrow">{country ? country.name : t('regional')}</span>
+            <span className="eyebrow">
+              {country ? t(`countries.${country.code}.name`) : t('regional')}
+            </span>
             {(country
               ? countryPages.slice(1)
               : ['nosotros', 'servicios', 'infraestructura', 'aliados', 'novedades', 'contacto']

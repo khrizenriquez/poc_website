@@ -1,10 +1,14 @@
-# PoC — Prueba de concepto corporativa regional
+# PoC · Regional corporate website
 
-Demo local con React 19, pnpm, Vite y Tailwind CSS. Inspiración visual: Lusion, Montfort y Apple. Incluye una apertura 3D progresiva, navegación regional, seis países y español/inglés.
+A bilingual corporate website demo with six country sites across Central America. It pairs an interactive 3D hero with a regional map, a sample product catalog, and simulated service forms. The visual direction draws on Lusion, Montfort, and Apple.
 
-## Ejecutar
+[View the live demo](https://khrizenriquez.github.io/poc_website/)
 
-Desarrollo verificado con Node.js 26.13.0 y pnpm 12.16.1. `.nvmrc`, `engines` y CI fijan esas versiones exactas. React 19.3.1, Vite 8.3.5, Tailwind CSS 4.3.4 y Vitest 5.1.0 quedan fijados en `package.json` y `pnpm-lock.yaml`.
+## Getting started
+
+Use Node.js 26.13.0 and pnpm 12.16.1. The project uses those exact versions locally and in CI. React 19.3.1, Vite 8.3.5, Tailwind CSS 4.3.4, and Vitest 5.1.0 are pinned in `package.json` and `pnpm-lock.yaml`.
+
+With nvm installed, run the following from the repository root:
 
 ```sh
 nvm install
@@ -14,73 +18,76 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Abrir la URL que imprime Vite, normalmente `http://127.0.0.1:5173/poc_website/`.
+Open the URL printed by Vite, usually `http://127.0.0.1:5173/poc_website/`.
 
-Para revisar exactamente la salida de producción:
+To preview the production build locally:
 
 ```sh
 pnpm build
 pnpm preview
 ```
 
-## Pruebas
+## Tests and coverage
 
 ```sh
-pnpm test                 # Suite unitaria y de integración DOM
-pnpm test:coverage        # Suite + cobertura V8, umbral mínimo 95% en las 4 métricas
-pnpm test:watch           # Desarrollo
-pnpm check                # Cobertura + build + auditoría HTTP del artefacto
+pnpm test                 # Run unit and DOM integration tests
+pnpm test:coverage        # Run tests with V8 coverage
+pnpm test:watch           # Rerun tests as files change
+pnpm check                # Run coverage, build the site, and audit static delivery
 ```
 
-El reporte HTML se genera en `coverage/index.html`. El resumen legible por herramientas está en `coverage/coverage-summary.json`. La auditoría del build se guarda en `test-results/build-audit.json`.
+Coverage includes all JavaScript and JSX files in `src/`, from the app entry point to the 3D scene, navigation, and forms. The suite requires at least 95% coverage for statements, branches, functions, and lines. The latest run passed **499 tests with 100% coverage across all four metrics**.
 
-La cobertura incluye **todos los archivos JS/JSX de `src`**, incluidos el arranque, componentes, escena 3D, navegación y formularios. No hay exclusiones de código ni comentarios para ignorar ramas. CSS, librerías externas y archivos de configuración de herramientas no forman parte de esa métrica.
+The HTML report is at `coverage/index.html`, the JSON summary at `coverage/coverage-summary.json`, and the build audit at `test-results/build-audit.json`. See the [verification report](docs/sdd/verification.md) and [test matrix](docs/sdd/test-matrix.md).
 
-Última verificación: **499 pruebas aprobadas, 100% en las cuatro métricas de cobertura**. Ver [informe final](docs/sdd/verification.md) y [matriz de escenarios y límites](docs/sdd/test-matrix.md).
+## Branding and motion
 
-## Marca y movimiento
+The logo, favicon, page titles, and interface use the **PoC** brand. The footer reads `© 2026 PoC - Christofer Enríquez`. The original photographs from Guatemala serve as visual references for the region.
 
-La interfaz utiliza la marca **PoC** (logo, favicon, títulos y textos ES/EN). El footer muestra `© 2026 PoC - Christofer Enríquez`. Las fotografías originales se conservan como referencia visual regional.
+GSAP ScrollTrigger adds parallax to large images on country homepages, panoramic sections, editorial pages, and individual news stories. The effect keeps the image within its frame and respects the visitor's reduced motion preference. Thumbnails, flags, and form images stay still.
 
-Las imágenes grandes de portadas nacionales, panorámicas, páginas editoriales y detalles de noticias tienen parallax con GSAP ScrollTrigger. El movimiento está limitado dentro de un marco recortado y se desactiva con `prefers-reduced-motion`. No se aplica a miniaturas, banderas ni imágenes de formularios.
+## What's included
 
-## Alcance
+- Eight corporate routes and twelve routes for each country site: Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica, and Panama.
+- Two legal routes and a 404 page. The 82 content routes are available in Spanish and English, for 164 localized routes. The 404 page is also bilingual.
+- Six fictional products with search, category filters, accessible product details, and a link to a sample order form.
+- Three sample news stories with shareable links.
+- Forms for contact, general inquiries, orders, returns, adverse event reporting, ethics concerns, and job applications. Each form validates input locally and clearly marks the confirmation as a simulation.
+- Light, dark, and system appearance settings with saved preferences and synchronization across tabs.
+- A mobile menu, country and language selectors, keyboard navigation, and support for reduced motion.
 
-- 8 rutas corporativas.
-- 12 rutas por cada uno de los 6 países: Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica y Panamá.
-- 2 rutas legales y una vista 404: **83 vistas base**.
-- Las 82 rutas de contenido existen en ES y EN: **164 variantes localizadas**, más la vista 404 en ambos idiomas.
-- Catálogo de seis productos ficticios: búsqueda, categorías, detalle accesible y acceso a un pedido de ejemplo.
-- Tres noticias de muestra con detalle compartible en la URL.
-- Contacto, consultas, pedidos, devoluciones, farmacovigilancia, ética/denuncias y empleo: validación local, estados de error y confirmación explícita de simulación.
-- Apariencia claro/oscuro/sistema con persistencia local y sincronización entre pestañas.
-- Menú móvil, selector de países, selector de idioma, navegación por teclado y preferencia de movimiento reducido.
+The country sites share a visual identity and use sample content tailored to each country. Everything runs in the browser. The demo keeps only language and appearance preferences in local storage, and form submissions are simulated.
 
-Los sitios nacionales usan una identidad compartida y contenido ilustrativo por país; no son una nueva captura completa de sus sitios públicos. Las fotografías proceden de Guatemala y se identifican como referencia regional. Productos, noticias y formularios son ejemplos. No hay base de datos, envíos reales, credenciales ni persistencia de datos de formularios. Solo pueden guardarse las preferencias de idioma y apariencia.
+## Languages and content
 
-## Idiomas y contenido
+| File                                                  | Purpose                                                            |
+| ----------------------------------------------------- | ------------------------------------------------------------------ |
+| `src/config/languages.js`                             | Supported languages, Spanish as the default, and the storage key   |
+| `src/i18n/locales/es.js` and `src/i18n/locales/en.js` | Page copy, accessible labels, error messages, and interface states |
+| `src/i18n/index.js`                                   | i18next setup and local translation resources                      |
+| `src/data/site.js`                                    | Country data, route definitions, sample products, and news stories |
 
-- `src/config/languages.js`: idiomas admitidos, español predeterminado y clave de preferencia.
-- `src/i18n/locales/es.js` y `en.js`: contenido, etiquetas accesibles, errores y estados de interfaz.
-- `src/i18n/index.js`: integración con i18next y recursos locales.
-- `src/data/site.js`: países, manifiesto de rutas, productos y noticias.
+To add a language, register it in `src/config/languages.js`, create its translation file, and add it to `resources` in `src/i18n/index.js`. Extend the translation parity tests to cover the new language.
 
-Para agregar un idioma: registrarlo en `languages.js`, crear su diccionario e incorporarlo a `resources` en `src/i18n/index.js`. Las pruebas de paridad ES/EN detectan divergencias en los idiomas entregados; deben extenderse al nuevo idioma.
+The language in the URL takes precedence over a saved preference. First-time visitors use Spanish by default. The language selector keeps the current country, page, and query parameters. Route slugs are shared across languages.
 
-El idioma de la URL tiene prioridad sobre la preferencia guardada. La primera visita sin preferencia usa español. El selector conserva país, página y parámetros. Los slugs son estables entre idiomas.
+## Light, dark, and system appearance
 
-## Claro, oscuro y sistema
+The **Appearance** selector sits next to the language selector. The default **System** setting follows the device's appearance and updates when that setting changes. Visitors can choose **Light** or **Dark** to override it. Browsers without `matchMedia` fall back to Light.
 
-El selector «Apariencia» está junto al idioma. En la primera visita usa la preferencia del sistema; una selección explícita tiene prioridad. «Sistema» vuelve a seguir los cambios del dispositivo en vivo. Si `matchMedia` no existe se usa claro. La elección persiste en `leterago-poc.theme`; un valor inválido vuelve a sistema. Si el navegador bloquea o llena el almacenamiento, el cambio sigue funcionando durante la sesión. Cambiar país, página o idioma no reinicia el tema; cambiar tema no borra borradores ni filtros.
+The choice is saved under `leterago-poc.theme`. Invalid saved values fall back to System, and visitors can still change the theme for the current session if storage is unavailable. The theme persists across navigation, and switching themes preserves form drafts and catalog filters.
 
-- `src/config/theme.js`: opciones, clave local y consulta de sistema.
-- `src/theme/ThemeProvider.jsx`: estado compartido, persistencia segura, sincronización y colores del navegador.
-- `src/styles/themes.css`: colores semánticos de ambas apariencias.
-- [Contrato y escenarios de aceptación](docs/sdd/theme.md).
+| File                          | Purpose                                                                         |
+| ----------------------------- | ------------------------------------------------------------------------------- |
+| `src/config/theme.js`         | Appearance options, storage key, and system preference query                    |
+| `src/theme/ThemeProvider.jsx` | Shared appearance state, storage, tab synchronization, and browser theme colors |
+| `src/styles/themes.css`       | Color tokens for light and dark mode                                            |
+
+See the [theme behavior and acceptance criteria](docs/sdd/theme.md).
 
 ## GitHub Pages
 
-La base de Vite es `/poc_website/`. HashRouter permite abrir o recargar rutas como:
+Vite uses `/poc_website/` as its base path. React Router's `HashRouter` lets visitors open or reload a deep link on GitHub Pages:
 
 ```text
 /poc_website/#/es/
@@ -88,28 +95,26 @@ La base de Vite es `/poc_website/`. HashRouter permite abrir o recargar rutas co
 /poc_website/#/en/guatemala/pedidos/?product=P01
 ```
 
-El workflow `.github/workflows/pages.yml` ejecuta `pnpm check` y solo publica si pasa, en pushes a `main` o ejecución manual sobre `main`. En pull requests y ejecuciones manuales de otras ramas solo valida. Para publicar posteriormente, habilitar **Settings → Pages → Source: GitHub Actions** en el repositorio.
+The workflow in `.github/workflows/pages.yml` runs `pnpm check`. It deploys after successful validation on pushes to `main` or manual runs on `main`. Pull requests and manual runs on other branches run validation only.
 
-[Preparación, versiones y pasos de publicación](docs/github-pages.md).
+To enable deployment in another copy of the repository, select **GitHub Actions** under **Settings → Pages → Build and deployment → Source**. If you change the repository name, update the base path and its checks to match. See the [deployment guide](docs/github-pages.md).
 
-Esta entrega es local: no se hizo push ni se activó GitHub Pages. La auditoría comprueba un servidor estático local con la misma subruta; el despliegue real se verificará al publicarlo.
-
-## Organización
+## Project structure
 
 ```text
 src/
-  components/    Navegación, mapa, diálogos y escena 3D
-  config/        Configuración de idiomas y apariencia
-  data/          Datos de demostración y rutas
-  i18n/          Inicialización y diccionarios ES/EN
-  lib/           Rutas, filtros y validación de formularios
-  pages/         Portadas, editorial, catálogo, noticias y formularios
-  styles/        Identidad visual, temas y responsive
-  theme/         Preferencia compartida de apariencia
-public/media/    Recursos locales autocontenidos
-scripts/        Auditoría del build estático
-tests/          Pruebas unitarias y de integración
-docs/sdd/       Dirección técnica, plan y matriz de escenarios
+  components/    Navigation, regional map, dialogs, and 3D scene
+  config/        Language and appearance settings
+  data/          Demo content and route definitions
+  i18n/          Translation setup and locale files
+  lib/           Routing, catalog filters, and form validation
+  pages/         Homepages, editorial pages, catalog, news, and forms
+  styles/        Branding, themes, and responsive layouts
+  theme/         Shared appearance state
+public/media/    Local image and media assets
+scripts/         Static build audit
+tests/           Unit and integration tests
+docs/sdd/        Technical direction, implementation plan, and test matrix
 ```
 
-[Procedencia de recursos](docs/asset-sources.md) · [Dirección visual](direccion-visual.md) · [Referencias](referencias-web.md).
+[Asset sources](docs/asset-sources.md) · [Visual direction](direccion-visual.md) · [Design references](referencias-web.md)

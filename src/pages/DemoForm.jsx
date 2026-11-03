@@ -69,7 +69,7 @@ export default function DemoForm({ page, country }) {
       <PageHeading
         title={t(`pages.${page}`)}
         description={t('forms.intro')}
-        eyebrow={country ? country.name : t('regional')}
+        eyebrow={country ? t(`countries.${country.code}.name`) : t('regional')}
       />
       <div className="form-layout">
         <aside>

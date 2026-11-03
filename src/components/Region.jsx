@@ -30,7 +30,7 @@ export default function Region({ language }) {
             key={country.code}
             style={{ left: `${country.x}%`, top: `${country.y}%` }}
             to={routePath(language, country)}
-            aria-label={t('region.visit', { country: country.name })}
+            aria-label={t('region.visit', { country: t(`countries.${country.code}.name`) })}
           >
             <span />
             <b>{country.code}</b>
@@ -48,12 +48,12 @@ export default function Region({ language }) {
             key={country.code}
             className="country-row"
             to={routePath(language, country)}
-            aria-label={t('region.visit', { country: country.name })}
+            aria-label={t('region.visit', { country: t(`countries.${country.code}.name`) })}
           >
             <span className="row-index">0{index + 1}</span>
             <span>
-              {country.name}
-              <small>{country.city}</small>
+              {t(`countries.${country.code}.name`)}
+              <small>{t(`countries.${country.code}.city`)}</small>
             </span>
             <Arrow diagonal />
           </Link>
